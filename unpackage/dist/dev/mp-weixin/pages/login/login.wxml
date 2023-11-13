@@ -1,0 +1,1 @@
+<view class="login-container"><view class="userAvtar"><image src="/static/img/avatar_nologin.png" mode=""></image></view><button type="primary" class="btn" plain bindtap="{{a}}">微信一键登录</button></view>

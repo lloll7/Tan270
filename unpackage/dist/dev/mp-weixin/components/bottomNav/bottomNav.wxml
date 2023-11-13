@@ -1,0 +1,1 @@
+<view class="bottomNav-container"><view class="bg"></view><view wx:for="{{a}}" wx:for-item="item" wx:key="c" class="{{['bottomNav-item', item.d && 'middleItem']}}" bindtap="{{item.e}}"><view class="imgContainer"><image src="{{item.a}}"></image></view><view class="navText">{{item.b}}</view></view></view>

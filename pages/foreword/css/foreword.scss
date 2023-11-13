@@ -1,0 +1,123 @@
+.forewordPage-container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	.frontBtn {
+		position: absolute;
+		width: 80rpx;
+		height: 80rpx;
+		top: 50rpx;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 50rpx;
+		text-align: center;
+		z-index: 999;
+		color: rgba(0, 0, 0, 0.5);
+	}
+	.nextBtn {
+		position: absolute;
+		width: 80rpx;
+		height: 80rpx;
+		bottom: -35rpx;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 50rpx;
+		text-align: center;
+		z-index: 999;
+		color: rgba(0, 0, 0, 0.5);
+	}
+	.goEndBtn {
+		position: absolute;
+		right: 30rpx;
+		bottom: 100rpx;
+		width: 80rpx;
+		height: 80rpx;
+		border-radius: 50%;
+		z-index: 999;
+		image {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.scrollOuter {
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+		.scrollItem {
+			width: 100%;
+			height: 100%;
+			.swiper-item {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 100%;
+				width: 100%;
+				padding-bottom: 50rpx;
+				.text-container1,
+				.text-container2,
+				.text-container3 {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					flex: 1;
+					text-align: center;
+					font-size: 60rpx;
+					text {
+						margin-bottom: 10rpx;
+					}
+				}
+				.text-container1 {
+					background-color: #fbefdf;
+					color: orange;
+					font-size: 50rpx;
+				}
+				.text-container2 {
+					background-color: #fbefdf;
+					color: deepskyblue;
+					font-size: 50rpx;
+				}
+				.text-container3 {
+					background-color: #c0e0b8;
+					color: green;
+					image {
+						width: 85%;
+						height: 300rpx;
+						object-fit: cover;
+						margin: 0 auto;
+						margin-top: 150rpx;
+					}
+				}
+				image {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+		.endScroll {
+			position: relative;
+			.swiperItemEnd {
+				position: absolute;
+				bottom: 10rpx;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 300rpx;
+				height: 100rpx;
+				.swiperItemEndInner {
+					width: 100%;
+					height: 100%;
+					border-radius: 15rpx;
+					line-height: 100rpx;
+					text-align: center;
+					font-weight: 600;
+					animation-duration: 2s;
+					animation-fill-mode: forwards;
+					background-color: rgba(249, 231, 138, 0.8);
+					&:hover {
+						background-color: rgb(249, 231, 138);
+					}
+				}
+			}
+		}
+	}
+}

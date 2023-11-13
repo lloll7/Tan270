@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/userpage/userpage",
+    "pages/foreword/foreword",
+    "pages/shopList/shopList",
+    "pages/recommend/recommend",
+    "pages/billingPage/billingPage",
+    "pages/saveSchemePage/saveSchemePage",
+    "pages/buySchemePage/buySchemePage",
+    "pages/improveSchemePage/improveSchemePage",
+    "pages/dayPlantTreePage/dayPlantTreePage",
+    "pages/personlySchemePage/personlySchemePage",
+    "pages/saveTestPage/saveTestPage",
+    "pages/login/login",
+    "pages/energySavingPage/energySavingPage"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/shopList/shopList"
+      },
+      {
+        "pagePath": "pages/recommend/recommend"
+      },
+      {
+        "pagePath": "pages/order/order"
+      },
+      {
+        "pagePath": "pages/userpage/userpage"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

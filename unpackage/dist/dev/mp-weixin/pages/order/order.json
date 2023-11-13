@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "购物袋",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "shopping-cart-item": "../../components/shoppingCartItem/shoppingCartItem",
+    "bottom-nav": "../../components/bottomNav/bottomNav"
+  }
+}

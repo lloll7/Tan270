@@ -1,0 +1,139 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		}, {
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "购物袋",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/userpage/userpage",
+			"style": {
+				"navigationBarTitleText": "个人主页",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/foreword/foreword",
+			"style": {
+				"navigationBarTitleText": "Tan270",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/shopList/shopList",
+			"style": {
+				"navigationBarTitleText": "店铺",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/recommend/recommend",
+			"style": {
+				"navigationBarTitleText": "所有家电",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/billingPage/billingPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/saveSchemePage/saveSchemePage",
+			"style": {
+				"navigationBarTitleText": "节能小测试",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/buySchemePage/buySchemePage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/improveSchemePage/improveSchemePage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/dayPlantTreePage/dayPlantTreePage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/personlySchemePage/personlySchemePage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/saveTestPage/saveTestPage",
+			"style": {
+				"navigationBarTitleText": "节能小测试",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	    ,{
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/energySavingPage/energySavingPage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"list": [ // 显示页面信息，tapBar需要跳转的所有页面信息
+			{
+				"pagePath": "pages/index/index" // 页面路径
+			},
+			{
+				"pagePath": "pages/shopList/shopList"
+			},
+			{
+				"pagePath": "pages/recommend/recommend"
+			},
+			{
+				"pagePath": "pages/order/order"
+			},
+			{
+				"pagePath": "pages/userpage/userpage"
+			}
+		]
+	},
+	"uniIdRouter": {},
+	"lazyCodeLoading": "requiredComponents"
+}

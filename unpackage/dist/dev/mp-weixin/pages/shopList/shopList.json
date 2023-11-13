@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "店铺",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "shop-item": "../../components/shopItem/shopItem",
+    "bottom-nav": "../../components/bottomNav/bottomNav"
+  }
+}

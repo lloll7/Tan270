@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "shopping-cart-item": "../../components/shoppingCartItem/shoppingCartItem"
+  }
+}

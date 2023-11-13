@@ -1,0 +1,1 @@
+<view><view wx:if="{{a}}" class="energySavingPage-container">节能数据</view></view>
