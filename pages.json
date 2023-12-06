@@ -6,6 +6,27 @@
 				"navigationBarTitleText": "首页"
 			}
 		}, {
+			"path": "pages/feedbackPage/feedbackPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/saveTestResPage/saveTestResPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/searchResPage/searchResPage",
+			"style": {
+				"navigationBarTitleText": "搜索结果",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
 			"path": "pages/order/order",
 			"style": {
 				"navigationBarTitleText": "购物袋",
@@ -43,7 +64,7 @@
 		}, {
 			"path": "pages/billingPage/billingPage",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "结算",
 				"enablePullDownRefresh": false
 			}
 
@@ -89,51 +110,82 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/energySavingPage/energySavingPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/myOrderPage/myOrderPage",
+			"style": {
+				"navigationBarTitleText": "我的订单",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/shouhouPage/shouhouPage",
+			"style": {
+				"navigationBarTitleText": "售后单",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/goodItemDetailPage/goodItemDetailPage",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/shopDetailPage/shopDetailPage",
+			"style": {
+				"navigationBarTitleText": "店铺详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/searchPage/searchPage",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/login/login",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/energySavingPage/energySavingPage",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
-	"tabBar": {
-		"list": [ // 显示页面信息，tapBar需要跳转的所有页面信息
-			{
-				"pagePath": "pages/index/index" // 页面路径
-			},
-			{
-				"pagePath": "pages/shopList/shopList"
-			},
-			{
-				"pagePath": "pages/recommend/recommend"
-			},
-			{
-				"pagePath": "pages/order/order"
-			},
-			{
-				"pagePath": "pages/userpage/userpage"
-			}
-		]
-	},
+	// "tabBar": {
+	// 	"list": [ // 显示页面信息，tapBar需要跳转的所有页面信息
+	// 		{
+	// 			"pagePath": "pages/index/index" // 页面路径
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/shopList/shopList"
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/recommend/recommend"
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/order/order"
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/userpage/userpage"
+	// 		}
+	// 	]
+	// },
 	"uniIdRouter": {},
 	"lazyCodeLoading": "requiredComponents"
 }

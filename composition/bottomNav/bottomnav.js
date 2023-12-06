@@ -35,8 +35,8 @@ export default function navInfo() {
 		}
 	]);
 	const switchPage = (item) => {
-		uni.switchTab({
-			url: item.pagePath
+		uni.navigateTo({
+			url: item.pagePath,
 		});
 	}
 	return {

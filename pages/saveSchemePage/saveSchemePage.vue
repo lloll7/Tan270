@@ -1,7 +1,7 @@
 <template>
 	<view class="">
 		<view class="img-container">
-			<image src="../../static/img/saveTestBtnPage.png" mode=""></image>
+			<image src="https://tan270.oss-cn-shenzhen.aliyuncs.com/gif/saveTestBtnPage.png" mode=""></image>
 			<view class="swiperItemEnd" @click="gotoSaveTest">
 				<view class="swiperItemEndInner animate animate__fadeInLeft">去测试</view>
 			</view>

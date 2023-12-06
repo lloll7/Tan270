@@ -1,13 +1,17 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const _sfc_main = {
-  data() {
-    return {};
-  },
-  methods: {}
+  __name: "personlySchemePage",
+  setup(__props) {
+    const url = common_vendor.ref(
+      "https://mp.weixin.qq.com/s?__biz=MzkwMDYxNTIwNA==&mid=2247483650&idx=1&sn=d9d60f9011856cb1377914de5c1be74c&chksm=c0401c49f737955ff438d5ae29104dc6f32246ffb893986f8b2367803d985a866f3013330663#rd"
+    );
+    return (_ctx, _cache) => {
+      return {
+        a: url.value
+      };
+    };
+  }
 };
-function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return {};
-}
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/HbuliderX/uniapp/Tan270/pages/personlySchemePage/personlySchemePage.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/lllollTan270/pages/personlySchemePage/personlySchemePage.vue"]]);
 wx.createPage(MiniProgramPage);

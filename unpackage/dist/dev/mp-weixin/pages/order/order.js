@@ -78,12 +78,13 @@ const _sfc_main = {
     });
     common_vendor.index.$on("increase", (id) => {
       console.log(id);
-      shoppingCartItemList.value.forEach((item) => {
-        if (item.id === id) {
-          item.num += 1;
-          changeShoppingCartItem(item);
+      for (let i = 0; i < shoppingCartItemList.value.length; i++) {
+        if (shoppingCartItemList.value[i].id === id) {
+          shoppingCartItemList.value[i].num++;
+          changeShoppingCartItem(shoppingCartItemList.value[i]);
+          break;
         }
-      });
+      }
     });
     const gotoBilling = () => {
       common_vendor.index.navigateTo({
@@ -97,7 +98,7 @@ const _sfc_main = {
         c: common_vendor.o(selectAll),
         d: common_vendor.f(common_vendor.unref(shoppingCartItemList), (item, k0, i0) => {
           return {
-            a: "090c13c0-0-" + i0,
+            a: "fcd189ba-0-" + i0,
             b: common_vendor.p({
               shopCartItem: item
             })
@@ -110,5 +111,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/Tan270/pages/order/order.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/lllollTan270/pages/order/order.vue"]]);
 wx.createPage(MiniProgramPage);

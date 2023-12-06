@@ -41,9 +41,12 @@ const props = defineProps({
 	}
 });
 
-const imageURL = ref('../../static/img/bg.png');
+// const imageURL = ref('../../static/img/bg.png');
+let id = props.shopInfo.id;
 function inToShopHandle() {
-	console.log('进入店铺');
+	uni.navigateTo({
+		url: `/pages/shopDetailPage/shopDetailPage?shopId=${id}`
+	});
 }
 </script>
 
@@ -57,6 +60,8 @@ function inToShopHandle() {
 	background-color: white;
 	box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.1);
 	margin-bottom: 30rpx;
+	border: 2px solid #333333;
+	box-sizing: border-box;
 	.top {
 		position: relative;
 		display: flex;
@@ -95,7 +100,8 @@ function inToShopHandle() {
 				align-items: flex-start;
 				font-size: 16px;
 				// font-weight: bold;
-				border-top: 1px solid rgba(0, 0, 0, 0.1);
+				border-top: 2px solid #333333;
+				box-sizing: border-box;
 				.shopMessage {
 					display: flex;
 					font-size: 13px;
@@ -110,13 +116,47 @@ function inToShopHandle() {
 			width: 120rpx;
 			height: 40rpx;
 			z-index: 999;
+			--bRadius: 10px;
 			.inToShop {
+				position: relative;
+				transition: all 0.3s;
 				width: 100%;
 				height: 100%;
 				text-align: center;
 				line-height: 40rpx;
-				border: 1px solid #9f9f9f;
-				color: #9f9f9f;
+				border: 1px solid #717171;
+				color: #717171;
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+					top: -10rpx;
+					left: -10rpx;
+					right: -10rpx;
+					bottom: -10rpx;
+					border: 1px solid #333333;
+					transition: all 0.3s;
+					// border-radius: var(--bRadius);
+					animation: clippath 3s infinite linear;
+				}
+				&::after {
+					animation: clippath 3s infinite -1.5s linear;
+				}
+				@keyframes clippath {
+					0%,
+					100% {
+						clip-path: inset(0 0 98% 0);
+					}
+					25% {
+						clip-path: inset(0 98% 0 0);
+					}
+					50% {
+						clip-path: inset(98% 0 0 0);
+					}
+					75% {
+						clip-path: inset(0 0 0 98%);
+					}
+				}
 			}
 		}
 	}

@@ -21,31 +21,31 @@
 			<view class="myOrder-container" v-if="JSON.stringify(userInfo) !== '{}'">
 				<view class="myOrderWord">我的订单</view>
 				<view class="contentList">
-					<view class="daifukuan item">
+					<view class="daifukuan item" @click="gotoMyOrderPage('daifukuan')">
 						<view class="img-container">
 							<image src="../../static/icon_zh97nd9pvxs/qianbao.png" mode=""></image>
 						</view>
 						<view class="wordContainer">待付款</view>
 					</view>
-					<view class="daifahuo item">
+					<view class="daifahuo item" @click="gotoMyOrderPage('daifahuo')">
 						<view class="img-container">
 							<image src="../../static/icon_zh97nd9pvxs/shuju.png" mode=""></image>
 						</view>
 						<view class="wordContainer">待发货</view>
 					</view>
-					<view class="daishouhuo item">
+					<view class="daishouhuo item" @click="gotoMyOrderPage('daishouhuo')">
 						<view class="img-container">
 							<image src="../../static/icon_zh97nd9pvxs/daishouhuo.png" mode=""></image>
 						</view>
 						<view class="wordContainer">待收货</view>
 					</view>
-					<view class="daipinjia item">
+					<view class="daipinjia item" @click="gotoMyOrderPage('daipingjia')">
 						<view class="img-container">
 							<image src="../../static/icon_zh97nd9pvxs/pinglun.png" mode=""></image>
 						</view>
 						<view class="wordContainer">待评价</view>
 					</view>
-					<view class="shouhou item">
+					<view class="shouhou item" @click="gotoShouHouPage">
 						<view class="img-container">
 							<image src="../../static/icon_zh97nd9pvxs/jifen.png" mode=""></image>
 						</view>
@@ -89,7 +89,7 @@
 					</view>
 					<image src="../../static/img/rightArrow.png" mode="aspectFill"></image>
 				</view>
-				<view class="item">
+				<view class="item" @click="gotoFeedBackPage">
 					<view class="img-text-container">
 						<image src="../../static/img/a-024_pingjia.png" mode="aspectFill"></image>
 						<view class="">我要反馈</view>
@@ -109,7 +109,10 @@
 <script setup>
 import { toRefs, ref, reactive } from 'vue';
 import { userInfoStore } from '@/store/userInfoStore.js';
+import { myOrderStore } from '@/store/myOrderStore.js';
+const orderStore = myOrderStore();
 const store = userInfoStore();
+const { updateActiveTip } = orderStore;
 const { userInfo } = toRefs(store);
 const { updateUserInfo } = store;
 
@@ -153,12 +156,13 @@ const getUserBaseInfo = () => {
 		},
 		fail: (err) => {
 			uni.showToast({
-				title: '出错了',
+				title: `出错了,${err}`,
 				icon: 'none'
 			});
 		}
 	});
 };
+
 if (JSON.stringify(userInfo.value) === '{}') {
 	gotoLogin();
 }
@@ -166,6 +170,25 @@ if (JSON.stringify(userInfo.value) === '{}') {
 const gotoEnergySavingPage = () => {
 	uni.navigateTo({
 		url: '/pages/energySavingPage/energySavingPage'
+	});
+};
+
+const gotoMyOrderPage = (activeTip) => {
+	updateActiveTip(activeTip);
+	uni.navigateTo({
+		url: '/pages/myOrderPage/myOrderPage'
+	});
+};
+
+const gotoShouHouPage = () => {
+	uni.navigateTo({
+		url: '/pages/shouhouPage/shouhouPage'
+	});
+};
+
+const gotoFeedBackPage = () => {
+	uni.navigateTo({
+		url: '/pages/feedbackPage/feedbackPage'
 	});
 };
 </script>

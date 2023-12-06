@@ -1,1 +1,1 @@
-<view>定制方案</view>
+<view><web-view src="{{a}}" bindmessage="getMessage"></web-view></view>

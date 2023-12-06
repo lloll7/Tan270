@@ -1,5 +1,5 @@
 <template>
-	<view class="goodItem-container">
+	<view class="goodItem-container" @click="gotoGoodItemDetail">
 		<view class="img-container">
 			<image :src="goodInfo.imgUrl" mode="aspectFill"></image>
 		</view>
@@ -23,6 +23,12 @@ const props = defineProps({
 		require: true
 	}
 });
+let id = props.goodInfo.id;
+const gotoGoodItemDetail = () => {
+	uni.navigateTo({
+		url: `/pages/goodItemDetailPage/goodItemDetailPage?goodId=${id}`
+	});
+};
 </script>
 
 <style lang="scss">

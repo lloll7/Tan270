@@ -1,5 +1,5 @@
 <template>
-	<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="0">
+	<scroll-view class="scroll-view_H" scroll-x="true" enhanced="true" show-scrollbar="{{false}}" @scroll="scroll" scroll-left="0">
 		<view class="shoppingCartItem-container">
 			<view class="itemContainer">
 				<radio-group name="" @change="changeSelect" v-if="showRadio">

@@ -2,6 +2,26 @@
   "dependencies": {
     "@zebra-ui/swiper": "^2.2.7",
     "animate.css": "^4.1.1",
+    "better-mock": "^0.3.7",
+    "mockjs": "^1.1.0",
+    "moment": "^2.29.4",
     "pinia": "^2.1.7"
-  }
+  },
+  "name": "lllolltan270",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lloll7/lllollTan270.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lloll7/lllollTan270/issues"
+  },
+  "homepage": "https://github.com/lloll7/lllollTan270#readme",
+  "description": ""
 }

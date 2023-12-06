@@ -1,6 +1,7 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const store_userInfoStore = require("../../store/userInfoStore.js");
+const store_myOrderStore = require("../../store/myOrderStore.js");
 if (!Array) {
   const _easycom_bottomNav2 = common_vendor.resolveComponent("bottomNav");
   _easycom_bottomNav2();
@@ -12,7 +13,9 @@ if (!Math) {
 const _sfc_main = {
   __name: "userpage",
   setup(__props) {
+    const orderStore = store_myOrderStore.myOrderStore();
     const store = store_userInfoStore.userInfoStore();
+    const { updateActiveTip } = orderStore;
     const { userInfo } = common_vendor.toRefs(store);
     const { updateUserInfo } = store;
     const gotoLogin = () => {
@@ -53,7 +56,7 @@ const _sfc_main = {
         },
         fail: (err) => {
           common_vendor.index.showToast({
-            title: "出错了",
+            title: `出错了,${err}`,
             icon: "none"
           });
         }
@@ -67,6 +70,22 @@ const _sfc_main = {
         url: "/pages/energySavingPage/energySavingPage"
       });
     };
+    const gotoMyOrderPage = (activeTip) => {
+      updateActiveTip(activeTip);
+      common_vendor.index.navigateTo({
+        url: "/pages/myOrderPage/myOrderPage"
+      });
+    };
+    const gotoShouHouPage = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/shouhouPage/shouhouPage"
+      });
+    };
+    const gotoFeedBackPage = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/feedbackPage/feedbackPage"
+      });
+    };
     return (_ctx, _cache) => {
       return common_vendor.e({
         a: JSON.stringify(common_vendor.unref(userInfo)) !== "{}"
@@ -78,11 +97,18 @@ const _sfc_main = {
         e: common_vendor.o(getUserBaseInfo)
       }, {
         f: JSON.stringify(common_vendor.unref(userInfo)) !== "{}"
-      }, JSON.stringify(common_vendor.unref(userInfo)) !== "{}" ? {} : {}, {
-        g: common_vendor.o(gotoEnergySavingPage)
+      }, JSON.stringify(common_vendor.unref(userInfo)) !== "{}" ? {
+        g: common_vendor.o(($event) => gotoMyOrderPage("daifukuan")),
+        h: common_vendor.o(($event) => gotoMyOrderPage("daifahuo")),
+        i: common_vendor.o(($event) => gotoMyOrderPage("daishouhuo")),
+        j: common_vendor.o(($event) => gotoMyOrderPage("daipingjia")),
+        k: common_vendor.o(gotoShouHouPage)
+      } : {}, {
+        l: common_vendor.o(gotoEnergySavingPage),
+        m: common_vendor.o(gotoFeedBackPage)
       });
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/Tan270/pages/userpage/userpage.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/lllollTan270/pages/userpage/userpage.vue"]]);
 wx.createPage(MiniProgramPage);

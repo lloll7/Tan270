@@ -33,10 +33,12 @@ const _sfc_main = {
     };
     const checkResult = () => {
       if (testDataAllDone.value) {
-        console.log("计算成功");
+        common_vendor.index.navigateTo({
+          url: "/pages/saveTestResPage/saveTestResPage"
+        });
       } else {
         common_vendor.index.showToast({
-          title: "请检查三项数据是否合理",
+          title: "请检查三项数据是否合理或为空",
           icon: "none"
         });
       }
@@ -68,18 +70,17 @@ const _sfc_main = {
         f: common_vendor.o(($event) => common_vendor.isRef(gasCapacity) ? gasCapacity.value = $event.detail.value : gasCapacity = $event.detail.value),
         g: common_vendor.o(checkResult),
         h: common_vendor.unref(showEndBtn),
-        i: common_vendor.o((...args) => _ctx.gotoSaveTest && _ctx.gotoSaveTest(...args)),
-        j: common_vendor.o(swpierChangeHandle),
-        k: common_vendor.o(move),
-        l: common_vendor.unref(activeSwiper),
-        m: !isNumber(common_vendor.unref(FuelQuantity))
+        i: common_vendor.o(swpierChangeHandle),
+        j: common_vendor.o(move),
+        k: common_vendor.unref(activeSwiper),
+        l: !isNumber(common_vendor.unref(FuelQuantity))
       }, !isNumber(common_vendor.unref(FuelQuantity)) ? {} : {}, {
-        n: !isNumber(common_vendor.unref(electricityConsumption))
+        m: !isNumber(common_vendor.unref(electricityConsumption))
       }, !isNumber(common_vendor.unref(electricityConsumption)) ? {} : {}, {
-        o: !isNumber(common_vendor.unref(gasCapacity))
+        n: !isNumber(common_vendor.unref(gasCapacity))
       }, !isNumber(common_vendor.unref(gasCapacity)) ? {} : {});
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/Tan270/pages/saveTestPage/saveTestPage.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/lllollTan270/pages/saveTestPage/saveTestPage.vue"]]);
 wx.createPage(MiniProgramPage);

@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/feedbackPage/feedbackPage",
+    "pages/saveTestResPage/saveTestResPage",
+    "pages/searchResPage/searchResPage",
     "pages/order/order",
     "pages/userpage/userpage",
     "pages/foreword/foreword",
@@ -14,32 +17,18 @@
     "pages/personlySchemePage/personlySchemePage",
     "pages/saveTestPage/saveTestPage",
     "pages/login/login",
-    "pages/energySavingPage/energySavingPage"
+    "pages/energySavingPage/energySavingPage",
+    "pages/myOrderPage/myOrderPage",
+    "pages/shouhouPage/shouhouPage",
+    "pages/goodItemDetailPage/goodItemDetailPage",
+    "pages/shopDetailPage/shopDetailPage",
+    "pages/searchPage/searchPage"
   ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index"
-      },
-      {
-        "pagePath": "pages/shopList/shopList"
-      },
-      {
-        "pagePath": "pages/recommend/recommend"
-      },
-      {
-        "pagePath": "pages/order/order"
-      },
-      {
-        "pagePath": "pages/userpage/userpage"
-      }
-    ]
   },
   "usingComponents": {}
 }

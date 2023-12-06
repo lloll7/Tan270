@@ -34,7 +34,7 @@ function navInfo() {
     }
   ]);
   const switchPage = (item) => {
-    common_vendor.index.switchTab({
+    common_vendor.index.navigateTo({
       url: item.pagePath
     });
   };

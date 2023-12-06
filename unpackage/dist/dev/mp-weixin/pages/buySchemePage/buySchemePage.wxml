@@ -1,1 +1,1 @@
-<view>购置方案</view>
+<view class="buySchemePage-container"><view class="bgImg"><image src="/static/img/bgImg/2.png" mode="aspectFill"></image></view><view class="allSelected"><view class="{{['btn', a && 'selected']}}" bindtap="{{b}}">全选</view></view><view class="buyScheme-container"><buy-scheme-item wx:for="{{c}}" wx:for-item="item" wx:key="a" u-i="{{item.b}}" bind:__l="__l" u-p="{{item.c}}"></buy-scheme-item></view></view>

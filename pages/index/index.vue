@@ -124,6 +124,9 @@
 				</view>
 			</z-swiper-item>
 		</z-swiper>
+		<uni-section title="文字滚动" subTitle="使用 scrollable 属性使通告滚动,此时 single 属性将失效,始终单行显示" type="line">
+			<uni-notice-bar show-icon scrollable text="Tan270小队首次开发小程序,智能节能家电推荐与购置,采用大数据分析生成推荐算法实现节能家电推荐" />
+		</uni-section>
 		<view class="controlStrip">
 			<view class="top">
 				<view class="jieyue item" @click="goToSaveSchemePage">
@@ -161,7 +164,7 @@
 
 			<!-- </view> -->
 		</view>
-		<scroll-view scroll-x="true" :enable-flex="true" class="styleList">
+		<scroll-view scroll-x="true" enhanced="true" show-scrollbar="{{false}}" :enable-flex="true" class="styleList">
 			<view class="styleBox">
 				<view class="styleInnerBox">
 					<image src="../../static/img/styleBox1.png" mode=""></image>
@@ -252,7 +255,7 @@
 				</swiper-item>
 			</swiper>
 		</view> -->
-		<view class="tip">
+		<!-- 		<view class="tip">
 			<view class="content1">猜你喜欢</view>
 			<view class="content2" @click="gotoRecommend">
 				<view class="">查看更多</view>
@@ -261,7 +264,8 @@
 		</view>
 		<view class="goodsList">
 			<goodItem class="goodItem" v-for="(item, index) in goodList" :key="index" :goodInfo="item"></goodItem>
-		</view>
+		</view> -->
+		<moreGood :goodList="goodList"></moreGood>
 		<!-- 底部垫片，垫起路由导航的高度 -->
 		<view class="bottom"></view>
 		<bottomNav></bottomNav>
@@ -269,12 +273,17 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+// import '../../api/good.js';
+import { ref, reactive, toRefs } from 'vue';
+import { goodListStore } from '../../store/goodListStore.js';
+const goodStore = goodListStore();
+const { goodList } = toRefs(goodStore);
 let options = reactive({
 	// loop: true,
 	effect: 'coverflow',
 	centeredSlides: true,
 	slidesPerView: 'auto',
+	// loopedSlides: 7,
 	coverflowEffect: {
 		rotate: 0,
 		stretch: -20,
@@ -283,6 +292,7 @@ let options = reactive({
 		slideShadows: true
 	}
 });
+// this.$fetch('/api/good');
 let list = reactive([
 	'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
 	'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
@@ -291,38 +301,38 @@ let list = reactive([
 	'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg'
 ]);
 
-const goodList = [
-	{
-		imgUrl: '../../static/img/jiajv.png',
-		goodName: 'Royal Palm Sofa',
-		price: '50.18'
-	},
-	{
-		imgUrl: '../../static/img/binxiang1.png',
-		goodName: 'Royal Palm Sofa',
-		price: '50.18'
-	},
-	{
-		imgUrl: '../../static/img/dianshi.png',
-		goodName: 'Royal Palm Sofa',
-		price: '50.18'
-	},
-	{
-		imgUrl: '../../static/img/zhuji.png',
-		goodName: 'Royal Palm Sofa',
-		price: '50.18'
-	},
-	{
-		imgUrl: '../../static/img/jiajav.png',
-		goodName: 'Vertical Air Conditioner',
-		price: '50.18'
-	},
-	{
-		imgUrl: '../../static/img/binxiang2.png',
-		goodName: 'Vertical Air Conditioner',
-		price: '50.18'
-	}
-];
+// const goodList = [
+// 	{
+// 		imgUrl: '../../static/img/jiajv.png',
+// 		goodName: 'Royal Palm Sofa',
+// 		price: '50.18'
+// 	},
+// 	{
+// 		imgUrl: '../../static/img/binxiang1.png',
+// 		goodName: 'Royal Palm Sofa',
+// 		price: '50.18'
+// 	},
+// 	{
+// 		imgUrl: '../../static/img/dianshi.png',
+// 		goodName: 'Royal Palm Sofa',
+// 		price: '50.18'
+// 	},
+// 	{
+// 		imgUrl: '../../static/img/zhuji.png',
+// 		goodName: 'Royal Palm Sofa',
+// 		price: '50.18'
+// 	},
+// 	{
+// 		imgUrl: '../../static/img/jiajav.png',
+// 		goodName: 'Vertical Air Conditioner',
+// 		price: '50.18'
+// 	},
+// 	{
+// 		imgUrl: '../../static/img/binxiang2.png',
+// 		goodName: 'Vertical Air Conditioner',
+// 		price: '50.18'
+// 	}
+// ];
 
 const goToSaveSchemePage = () => {
 	uni.navigateTo({

@@ -732,5 +732,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
 }
 if (typeof zSwiperWxs_wxs_vue_type_wxs_index_0_src_true_name_zSwiperWxs_lang.block0 === "function")
   zSwiperWxs_wxs_vue_type_wxs_index_0_src_true_name_zSwiperWxs_lang.block0(_sfc_main);
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-3db01611"], ["__file", "D:/HbuliderX/uniapp/Tan270/uni_modules/zebra-swiper/components/z-swiper/z-swiper.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-3db01611"], ["__file", "D:/HbuliderX/uniapp/lllollTan270/uni_modules/zebra-swiper/components/z-swiper/z-swiper.vue"]]);
 wx.createComponent(Component);

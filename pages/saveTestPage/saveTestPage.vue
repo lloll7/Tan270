@@ -3,26 +3,26 @@
 		<swiper :interval="3000" :vertical="true" :duration="1000" class="swiper-container" @change="swpierChangeHandle" @transition="move" :acceleration="activeSwiper">
 			<swiper-item>
 				<view class="swiper-item">
-					<image src="../../static/GIF/saveTest.gif" mode=""></image>
+					<image src="https://tan270.oss-cn-shenzhen.aliyuncs.com/gif/saveTest.gif" mode=""></image>
 				</view>
 			</swiper-item>
 			<swiper-item>
 				<view class="swiper-item">
 					<input type="text" class="saveValueInput save1" v-model="FuelQuantity" />
-					<image src="../../static/img/2.png" mode=""></image>
+					<image src="https://tan270.oss-cn-shenzhen.aliyuncs.com/gif/saveTest2.png" mode=""></image>
 				</view>
 			</swiper-item>
 			<swiper-item>
 				<view class="swiper-item">
 					<input type="text" class="saveValueInput save2" v-model="electricityConsumption" />
-					<image src="../../static/img/3.png" mode=""></image>
+					<image src="https://tan270.oss-cn-shenzhen.aliyuncs.com/gif/saveTest3.png" mode=""></image>
 				</view>
 			</swiper-item>
 			<swiper-item>
 				<view class="swiper-item endTest">
 					<input type="text" class="saveValueInput save3" v-model="gasCapacity" />
-					<image src="../../static/img/4.png" mode=""></image>
-					<view class="swiperItemEnd" v-show="showEndBtn" @click="gotoSaveTest">
+					<image src="https://tan270.oss-cn-shenzhen.aliyuncs.com/gif/saveTest4.png" mode=""></image>
+					<view class="swiperItemEnd" v-show="showEndBtn">
 						<view class="swiperItemEndInner animate animate__fadeInLeft" @click="checkResult">查看结果</view>
 					</view>
 				</view>
@@ -31,22 +31,22 @@
 		<view class="sideNav">
 			<view class="tip tip1">
 				<view class="img-container">
-					<image v-if="!isNumber(FuelQuantity)" src="../../static/img/ETC_nodata.png" mode=""></image>
-					<image v-else src="../../static/img/ETCjiaofei.png" mode=""></image>
+					<image v-if="!isNumber(FuelQuantity)" src="https://tan270.oss-cn-shenzhen.aliyuncs.com/img/ETC_nodata.png" mode=""></image>
+					<image v-else src="https://tan270.oss-cn-shenzhen.aliyuncs.com/img/ETCjiaofei.png" mode=""></image>
 				</view>
 				<view class="">燃油费</view>
 			</view>
 			<view class="tip tip2">
 				<view class="img-container">
-					<image v-if="!isNumber(electricityConsumption)" src="../../static/img/dianfei_nodata.png" mode=""></image>
-					<image v-else src="../../static/img/dianfei.png" mode=""></image>
+					<image v-if="!isNumber(electricityConsumption)" src="https://tan270.oss-cn-shenzhen.aliyuncs.com/img/dianfei_nodata.png" mode=""></image>
+					<image v-else src="https://tan270.oss-cn-shenzhen.aliyuncs.com/img/dianfei.png" mode=""></image>
 				</view>
 				<view class="">用电费</view>
 			</view>
 			<view class="tip tip3">
 				<view class="img-container">
-					<image v-if="!isNumber(gasCapacity)" src="../../static/img/ranqifei_nodata.png" mode=""></image>
-					<image v-else src="../../static/img/ranqifei.png" mode=""></image>
+					<image v-if="!isNumber(gasCapacity)" src="https://tan270.oss-cn-shenzhen.aliyuncs.com/img/ranqifei_nodata.png" mode=""></image>
+					<image v-else src="https://tan270.oss-cn-shenzhen.aliyuncs.com/img/ranqifei.png" mode=""></image>
 				</view>
 				<view class="">燃气费</view>
 			</view>
@@ -99,10 +99,12 @@ const swpierChangeHandle = (e) => {
 
 const checkResult = () => {
 	if (testDataAllDone.value) {
-		console.log('计算成功');
+		uni.navigateTo({
+			url: '/pages/saveTestResPage/saveTestResPage'
+		});
 	} else {
 		uni.showToast({
-			title: '请检查三项数据是否合理',
+			title: '请检查三项数据是否合理或为空',
 			icon: 'none'
 		});
 	}

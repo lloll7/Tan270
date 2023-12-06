@@ -11,13 +11,16 @@ const _sfc_main = {
     }
   },
   setup(__props) {
-    const imageURL = common_vendor.ref("../../static/img/bg.png");
+    const props = __props;
+    let id = props.shopInfo.id;
     function inToShopHandle() {
-      console.log("进入店铺");
+      common_vendor.index.navigateTo({
+        url: `/pages/shopDetailPage/shopDetailPage?shopId=${id}`
+      });
     }
     return (_ctx, _cache) => {
       return {
-        a: "url(" + imageURL.value + ")",
+        a: "url(" + _ctx.imageURL + ")",
         b: __props.shopInfo.avatar,
         c: common_vendor.t(__props.shopInfo.shopName),
         d: common_vendor.t(__props.shopInfo.shops),
@@ -34,5 +37,5 @@ const _sfc_main = {
     };
   }
 };
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/Tan270/components/shopItem/shopItem.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/lllollTan270/components/shopItem/shopItem.vue"]]);
 wx.createComponent(Component);

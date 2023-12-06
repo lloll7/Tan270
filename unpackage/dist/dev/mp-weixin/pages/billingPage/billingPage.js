@@ -38,7 +38,7 @@ const _sfc_main = {
         a: common_vendor.f(common_vendor.unref(shopCartItemSelectedList), (item, k0, i0) => {
           return {
             a: item.id,
-            b: "b97565d0-0-" + i0,
+            b: "022c259b-0-" + i0,
             c: common_vendor.p({
               showRadio: false,
               shopCartItem: item
@@ -52,5 +52,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/Tan270/pages/billingPage/billingPage.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/lllollTan270/pages/billingPage/billingPage.vue"]]);
 wx.createPage(MiniProgramPage);

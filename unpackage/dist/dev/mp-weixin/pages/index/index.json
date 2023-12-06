@@ -3,7 +3,8 @@
   "usingComponents": {
     "z-swiper-item": "../../uni_modules/zebra-swiper/components/z-swiper-item/z-swiper-item",
     "z-swiper": "../../uni_modules/zebra-swiper/components/z-swiper/z-swiper",
-    "good-item": "../../components/goodItem/goodItem",
+    "uni-notice-bar": "../../uni_modules/uni-notice-bar/components/uni-notice-bar/uni-notice-bar",
+    "more-good": "../../components/moreGood/moreGood",
     "bottom-nav": "../../components/bottomNav/bottomNav"
   }
 }

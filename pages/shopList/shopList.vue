@@ -5,10 +5,10 @@
 			<view class="newShop" @click="shopTypeIndex = 1" :class="{ active: shopTypeIndex === 1 }">最新入驻</view>
 		</view>
 		<view class="shopList-container" v-if="!shopTypeIndex">
-			<shopItem :shops="0" :fans="0" :shopInfo="shopInfo" v-for="item in 10" class="item"></shopItem>
+			<shopItem :shops="0" :fans="0" :shopInfo="item" v-for="item in hotShopList" :key="item.shopName" class="item"></shopItem>
 		</view>
 		<view class="shopList-container" v-else>
-			<shopItem :shops="0" :fans="0" :shopInfo="shopInfo" v-for="item in 3" class="item"></shopItem>
+			<shopItem :shops="0" :fans="0" :shopInfo="item" v-for="item in newShopList" :key="item.shopName" class="item"></shopItem>
 		</view>
 		<!-- 底部垫片，垫起路由导航的高度 -->
 		<view class="bottom"></view>
@@ -17,39 +17,28 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, toRefs } from 'vue';
+import { shopListStore } from '../../store/shopListStore.js';
+const store = shopListStore();
+let { shopList } = toRefs(store);
+let hotShopList = reactive([]);
+let newShopList = reactive([]);
 
-const shopInfo = reactive({
-	avatar: '../../static/img/Personal_Icon.jpg',
-	shopName: '南庭苑原创汉服',
-	shops: 0,
-	fans: 0,
-	shopItemList: [
-		{
-			imgUrl: 'https://img.alicdn.com/imgextra/i1/171140118/O1CN01rc1jDD1Ck5YlhW5dn_!!0-saturn_solar.jpg_468x468q75.jpg_.webp',
-			price: 100
-		},
-		{
-			imgUrl: 'https://img.alicdn.com/imgextra/i4/130164863/O1CN01ejkJ6D1lnIxX8Kbbd_!!0-saturn_solar.jpg_468x468q75.jpg_.webp',
-			price: 100
-		},
-		{
-			imgUrl: 'https://img.alicdn.com/imgextra/i2/2128420061/O1CN015FWEyu1CJz2DliNf3_!!0-saturn_solar.jpg_468x468q75.jpg_.webp',
-			price: 100
-		},
-		{
-			imgUrl: 'https://img.alicdn.com/imgextra/i2/4346125171/O1CN01m4Chg21o4Mx0FUnGI_!!0-saturn_solar.jpg_468x468q75.jpg_.webp',
-			price: 100
-		}
-	]
+shopList.value.forEach((item) => {
+	if (item.type === 'hot') {
+		hotShopList.push(item);
+	} else if (item.type === 'new') {
+		newShopList.push(item);
+	}
 });
+
 // 热门店铺 or 最新入驻
 let shopTypeIndex = ref(0);
 </script>
 
 <style lang="scss">
 .outer-container {
-	background-color: #f5f5f5;
+	background-color: white;
 	.topNav {
 		display: flex;
 		width: 100%;
@@ -63,14 +52,16 @@ let shopTypeIndex = ref(0);
 			text-align: center;
 			line-height: 60rpx;
 			&.active {
-				border-bottom: 3px solid #c3c3c3;
+				// border-bottom: 3px solid #c3c3c3;
+				background-color: #333333;
+				color: white;
 			}
 		}
 	}
 	.shopList-container {
 		box-sizing: border-box;
 		padding: 15rpx 20rpx;
-		background-color: #f5f5f5;
+		background-color: white;
 		height: 100%;
 	}
 	.bottom {

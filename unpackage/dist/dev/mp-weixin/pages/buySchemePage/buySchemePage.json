@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "buy-scheme-item": "../../components/buySchemeItem/buySchemeItem"
+  }
 }

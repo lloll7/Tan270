@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "结算",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "shopping-cart-item": "../../components/shoppingCartItem/shoppingCartItem"

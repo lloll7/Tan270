@@ -1,27 +1,34 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const store_goodListStore = require("../../store/goodListStore.js");
 if (!Array) {
   const _easycom_z_swiper_item2 = common_vendor.resolveComponent("z-swiper-item");
   const _easycom_z_swiper2 = common_vendor.resolveComponent("z-swiper");
-  const _easycom_goodItem2 = common_vendor.resolveComponent("goodItem");
+  const _easycom_uni_notice_bar2 = common_vendor.resolveComponent("uni-notice-bar");
+  const _component_uni_section = common_vendor.resolveComponent("uni-section");
+  const _easycom_moreGood2 = common_vendor.resolveComponent("moreGood");
   const _easycom_bottomNav2 = common_vendor.resolveComponent("bottomNav");
-  (_easycom_z_swiper_item2 + _easycom_z_swiper2 + _easycom_goodItem2 + _easycom_bottomNav2)();
+  (_easycom_z_swiper_item2 + _easycom_z_swiper2 + _easycom_uni_notice_bar2 + _component_uni_section + _easycom_moreGood2 + _easycom_bottomNav2)();
 }
 const _easycom_z_swiper_item = () => "../../uni_modules/zebra-swiper/components/z-swiper-item/z-swiper-item.js";
 const _easycom_z_swiper = () => "../../uni_modules/zebra-swiper/components/z-swiper/z-swiper.js";
-const _easycom_goodItem = () => "../../components/goodItem/goodItem.js";
+const _easycom_uni_notice_bar = () => "../../uni_modules/uni-notice-bar/components/uni-notice-bar/uni-notice-bar.js";
+const _easycom_moreGood = () => "../../components/moreGood/moreGood.js";
 const _easycom_bottomNav = () => "../../components/bottomNav/bottomNav.js";
 if (!Math) {
-  (_easycom_z_swiper_item + _easycom_z_swiper + _easycom_goodItem + _easycom_bottomNav)();
+  (_easycom_z_swiper_item + _easycom_z_swiper + _easycom_uni_notice_bar + _easycom_moreGood + _easycom_bottomNav)();
 }
 const _sfc_main = {
   __name: "index",
   setup(__props) {
+    const goodStore = store_goodListStore.goodListStore();
+    const { goodList } = common_vendor.toRefs(goodStore);
     let options = common_vendor.reactive({
       // loop: true,
       effect: "coverflow",
       centeredSlides: true,
       slidesPerView: "auto",
+      // loopedSlides: 7,
       coverflowEffect: {
         rotate: 0,
         stretch: -20,
@@ -37,38 +44,6 @@ const _sfc_main = {
       "https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg",
       "https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg"
     ]);
-    const goodList = [
-      {
-        imgUrl: "../../static/img/jiajv.png",
-        goodName: "Royal Palm Sofa",
-        price: "50.18"
-      },
-      {
-        imgUrl: "../../static/img/binxiang1.png",
-        goodName: "Royal Palm Sofa",
-        price: "50.18"
-      },
-      {
-        imgUrl: "../../static/img/dianshi.png",
-        goodName: "Royal Palm Sofa",
-        price: "50.18"
-      },
-      {
-        imgUrl: "../../static/img/zhuji.png",
-        goodName: "Royal Palm Sofa",
-        price: "50.18"
-      },
-      {
-        imgUrl: "../../static/img/jiajav.png",
-        goodName: "Vertical Air Conditioner",
-        price: "50.18"
-      },
-      {
-        imgUrl: "../../static/img/binxiang2.png",
-        goodName: "Vertical Air Conditioner",
-        price: "50.18"
-      }
-    ];
     const goToSaveSchemePage = () => {
       common_vendor.index.navigateTo({
         url: "/pages/saveSchemePage/saveSchemePage"
@@ -89,11 +64,6 @@ const _sfc_main = {
         url: "/pages/personlySchemePage/personlySchemePage"
       });
     };
-    const gotoRecommend = () => {
-      common_vendor.index.switchTab({
-        url: "/pages/recommend/recommend"
-      });
-    };
     return (_ctx, _cache) => {
       return {
         a: common_vendor.f(common_vendor.unref(list), (item, index, i0) => {
@@ -101,7 +71,7 @@ const _sfc_main = {
             a: item,
             b: common_vendor.t(index + 1),
             c: index,
-            d: "85207bb0-1-" + i0 + ",85207bb0-0"
+            d: "438d072b-1-" + i0 + ",438d072b-0"
           };
         }),
         b: common_vendor.t(common_vendor.unref(list).length),
@@ -116,23 +86,26 @@ const _sfc_main = {
           options: common_vendor.unref(options),
           modelValue: common_vendor.unref(list)
         }),
-        f: common_vendor.o(goToSaveSchemePage),
-        g: common_vendor.o(goToBuySchemePage),
-        h: common_vendor.o(goToImproveSchemePage),
-        i: common_vendor.o(goToPersonlySchemePage),
-        j: common_vendor.o(gotoRecommend),
-        k: common_vendor.f(goodList, (item, index, i0) => {
-          return {
-            a: index,
-            b: "85207bb0-2-" + i0,
-            c: common_vendor.p({
-              goodInfo: item
-            })
-          };
+        f: common_vendor.p({
+          ["show-icon"]: true,
+          scrollable: true,
+          text: "Tan270小队首次开发小程序,智能节能家电推荐与购置,采用大数据分析生成推荐算法实现节能家电推荐"
+        }),
+        g: common_vendor.p({
+          title: "文字滚动",
+          subTitle: "使用 scrollable 属性使通告滚动,此时 single 属性将失效,始终单行显示",
+          type: "line"
+        }),
+        h: common_vendor.o(goToSaveSchemePage),
+        i: common_vendor.o(goToBuySchemePage),
+        j: common_vendor.o(goToImproveSchemePage),
+        k: common_vendor.o(goToPersonlySchemePage),
+        l: common_vendor.p({
+          goodList: common_vendor.unref(goodList)
         })
       };
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/Tan270/pages/index/index.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/HbuliderX/uniapp/lllollTan270/pages/index/index.vue"]]);
 wx.createPage(MiniProgramPage);

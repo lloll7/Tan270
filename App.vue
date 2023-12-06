@@ -13,4 +13,9 @@ wx-swiper .wx-swiper-dot {
 	position: relative;
 	bottom: 34rpx;
 }
+/* ::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	color: transparent;
+} */
 </style>

@@ -1,5 +1,6 @@
 <template>
 	<view class="order-container">
+		<!-- <view class="goback" @click="goback">按时地方烦烦烦</view> -->
 		<view class="shoppingCartContainer">
 			<view class="shoppingCartList">
 				<view class="radioContainer">
@@ -38,6 +39,7 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue';
+import { onReady } from '@dcloudio/uni-app';
 import { shoppingCartItemStore } from '../../store/shoppingCartItemStore.js';
 import { storeToRefs } from 'pinia';
 const store = shoppingCartItemStore(); // 拿到仓库
@@ -112,12 +114,16 @@ uni.$on('decrease', (id) => {
 });
 uni.$on('increase', (id) => {
 	console.log(id);
-	shoppingCartItemList.value.forEach((item) => {
-		if (item.id === id) {
-			item.num += 1;
-			changeShoppingCartItem(item);
+	// shoppingCartItemList.value.forEach((item) => {
+
+	// });
+	for (let i = 0; i < shoppingCartItemList.value.length; i++) {
+		if (shoppingCartItemList.value[i].id === id) {
+			shoppingCartItemList.value[i].num++;
+			changeShoppingCartItem(shoppingCartItemList.value[i]);
+			break;
 		}
-	});
+	}
 });
 
 const gotoBilling = () => {
