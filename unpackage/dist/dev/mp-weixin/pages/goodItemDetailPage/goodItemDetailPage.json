@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "good-item-detail": "../../components/goodItemDetail/goodItemDetail"
+  }
+}

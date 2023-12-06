@@ -1,0 +1,1 @@
+<view class="search-container"><view class="img-container"><image src="/static/img/sousou.png" mode=""></image></view><view class="search"><input type="text" placeholder="{{a}}" value="{{b}}" bindinput="{{c}}"/></view></view>

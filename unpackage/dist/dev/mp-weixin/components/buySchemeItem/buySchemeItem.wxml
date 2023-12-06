@@ -1,0 +1,1 @@
+<view bindtap="{{h}}" class="{{['buySchemeItem-contianer', i && 'selected']}}"><view class="text">{{a}}</view><view class="img-container"><image src="{{b}}" mode="" hidden="{{!c}}"></image><image src="{{d}}" mode="" hidden="{{!e}}"></image></view><view class="btn" hidden="{{!f}}">选择</view><view class="btn" hidden="{{!g}}">√</view></view>

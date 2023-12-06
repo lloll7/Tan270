@@ -1,0 +1,1 @@
+<view><more-good wx:if="{{a}}" u-i="3e6c6c56-0" bind:__l="__l" u-p="{{a}}"></more-good></view>

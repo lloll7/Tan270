@@ -1,0 +1,1 @@
+<view><good-item-detail wx:if="{{a}}" u-i="3dd88076-0" bind:__l="__l" u-p="{{a}}"></good-item-detail></view>

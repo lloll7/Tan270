@@ -1,0 +1,1 @@
+<view class="myOrderPage-container"><tab-bar u-i="35956bae-0" bind:__l="__l"></tab-bar><order-list u-i="35956bae-1" bind:__l="__l"></order-list></view>

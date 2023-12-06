@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "z-swiper-item": "../../uni_modules/zebra-swiper/components/z-swiper-item/z-swiper-item",
+    "z-swiper": "../../uni_modules/zebra-swiper/components/z-swiper/z-swiper",
+    "more-good": "../moreGood/moreGood",
+    "lin-popup": "../lin-popup/lin-popup"
+  }
+}
